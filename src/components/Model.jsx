@@ -13,18 +13,25 @@ export function Model(props) {
   const timeline = useRef();
   const controls = useRef();
   const camera = useThree((state) => state.camera);
-  let initScrool = false;
 
   const page_1_ref = useRef();
   const page_2_ref = useRef();
   const page_3_ref = useRef();
   const page_4_ref = useRef();
+  const page_5_ref = useRef();
+
+  const pointer_1_ref = useRef();
+  const pointer_2_ref = useRef();
 
   useLayoutEffect(() => {
     page_1_ref.current = document.getElementById('page-1');
     page_2_ref.current = document.getElementById('page-2');
     page_3_ref.current = document.getElementById('page-3');
     page_4_ref.current = document.getElementById('page-4');
+    page_5_ref.current = document.getElementById('page-5');
+
+    pointer_1_ref.current = document.getElementById('pointer-1');
+    pointer_2_ref.current = document.getElementById('pointer-2');
   }, []);
 
   useEffect(() => {
@@ -33,7 +40,7 @@ export function Model(props) {
       if (mesh) {
         mesh.material = new THREE.MeshStandardMaterial({
           map: texture,
-          roughness: 0.3,
+          roughness: 0.2,
           metalness: 0.9,
         });
       }
@@ -42,12 +49,6 @@ export function Model(props) {
 
   useEffect(() => {
     const timeline = gsap.timeline();
-
-    // Animaciones de ejemplo para el "page-1" y la cámara
-    timeline.to(page_1_ref.current, {
-      opacity: 1,
-      duration: 0.5,
-    });
 
     timeline.to(camera.position, {
       y: 0.2,
@@ -61,20 +62,24 @@ export function Model(props) {
       onComplete: () => {
         gsap.to(camera, {
           fov: 23,
-          duration: 1,
+          duration: 0.5,
           onUpdate: () => camera.updateProjectionMatrix(),
         });
         actions.Animation.paused = true;
-        initScrool = true;
         gsap.to(camera.position, {
           x: -0.5,
-          duration: 1,
+          duration: 0.5,
+        });
+        gsap.to(page_1_ref.current, {
+          opacity: 1,
+          transform: 'translateY(0)',
+          duration: 0.5,
         });
       },
     });
     timeline.to(controls.current.target, {
       x: 0.2,
-      duration: 1,
+      duration: 0.5,
     });
 
     // Reproduce la animación automáticamente al cargar la página
@@ -85,14 +90,15 @@ export function Model(props) {
     timeline.current = gsap.timeline();
     let AnimationsData = [];
 
-    const HeadbandAnimations = [
+    const servicesAnimations = [
       {
         objectToAnimate: page_1_ref.current,
         properties: {
           opacity: 0,
+          transform: 'translateY(-50%)',
           duration: 0.5,
         },
-        timelinePoint: 0.3,
+        timelinePoint: 0.5,
       },
       {
         objectToAnimate: group.current.rotation,
@@ -100,9 +106,9 @@ export function Model(props) {
           x: 0.2,
           y: 0.2,
           z: 1,
-          duration: 0.8,
+          duration: 0.5,
         },
-        timelinePoint: 0.5,
+        timelinePoint: 0.3,
       },
       {
         objectToAnimate: controls.current.target,
@@ -111,7 +117,7 @@ export function Model(props) {
           z: 0,
           y: 0,
         },
-        timelinePoint: 0.4,
+        timelinePoint: 0.2,
       },
       {
         objectToAnimate: camera.position,
@@ -119,18 +125,246 @@ export function Model(props) {
           x: 0,
           y: 0.1,
           z: 0.8,
-          duration: 1,
+          duration: 0.5,
         },
-        timelinePoint: 0.4,
+        timelinePoint: 0.5,
       },
 
       {
         objectToAnimate: page_2_ref.current,
         properties: {
           opacity: 1,
+          display: 'flex',
+          transform: 'translateY(0)',
+          duration: 0.3,
+        },
+        timelinePoint: 1,
+      },
+      {
+        objectToAnimate: pointer_1_ref.current,
+        properties: {
+          pointerEvents: 'visible',
+        },
+        timelinePoint: 1.1,
+      },
+
+      {
+        objectToAnimate: camera,
+        properties: {
+          fov: 30,
+          duration: 0.5,
+          onUpdate: () => camera.updateProjectionMatrix(),
+        },
+        timelinePoint: 1,
+      },
+    ];
+    AnimationsData = [...AnimationsData, ...servicesAnimations];
+
+    const projectsAnimations = [
+      {
+        objectToAnimate: page_2_ref.current,
+        properties: {
+          opacity: 0,
+          display: 'none',
+          transform: 'translateY(-50%)',
+          duration: 0.3,
+        },
+        timelinePoint: 1.8,
+      },
+      {
+        objectToAnimate: pointer_2_ref.current,
+        properties: {
+          pointerEvents: 'none',
+        },
+        timelinePoint: 1.7,
+      },
+      {
+        objectToAnimate: group.current.rotation,
+        properties: {
+          x: 1.6,
+          y: -0.3,
+          z: -1.8,
           duration: 0.5,
         },
-        timelinePoint: 0.8,
+        timelinePoint: 1.6,
+      },
+      {
+        objectToAnimate: controls.current.target,
+        properties: {
+          x: 0.3,
+          z: 0,
+          y: 0,
+          duration: 0.5,
+        },
+        timelinePoint: 1.6,
+      },
+      {
+        objectToAnimate: camera.position,
+        properties: {
+          x: 0,
+          y: 0.1,
+          z: 0.8,
+          duration: 0.5,
+        },
+        timelinePoint: 1.6,
+      },
+
+      {
+        objectToAnimate: page_3_ref.current,
+        properties: {
+          opacity: 1,
+          display: 'flex',
+          transform: 'translateY(0)',
+
+          duration: 0.5,
+        },
+        timelinePoint: 2,
+      },
+      {
+        objectToAnimate: pointer_2_ref.current,
+        properties: {
+          pointerEvents: 'visible',
+        },
+        timelinePoint: 2.2,
+      },
+
+      {
+        objectToAnimate: camera,
+        properties: {
+          fov: 30,
+          duration: 0.5,
+          onUpdate: () => camera.updateProjectionMatrix(),
+        },
+        timelinePoint: 2,
+      },
+    ];
+    AnimationsData = [...AnimationsData, ...projectsAnimations];
+
+    const aboutMeAnimations = [
+      {
+        objectToAnimate: page_3_ref.current,
+        properties: {
+          opacity: 0,
+          display: 'none',
+          transform: 'translateY(-50%)',
+
+          duration: 0.5,
+        },
+        timelinePoint: 2.8,
+      },
+      {
+        objectToAnimate: pointer_2_ref.current,
+        properties: {
+          pointerEvents: 'none',
+        },
+        timelinePoint: 2.8,
+      },
+      {
+        objectToAnimate: group.current.rotation,
+        properties: {
+          x: 0,
+          y: 0,
+          z: 0,
+          duration: 0.5,
+        },
+        timelinePoint: 2.5,
+      },
+      {
+        objectToAnimate: controls.current.target,
+        properties: {
+          x: 0,
+          y: 0.15,
+          z: 0,
+          duration: 0.5,
+        },
+        timelinePoint: 2.7,
+      },
+      {
+        objectToAnimate: camera.position,
+        properties: {
+          x: 0,
+          y: 0.3,
+          z: 0.7,
+          duration: 0.5,
+        },
+        timelinePoint: 2.7,
+      },
+
+      {
+        objectToAnimate: page_4_ref.current,
+        properties: {
+          opacity: 1,
+          display: 'flex',
+          transform: 'translateY(0)',
+
+          duration: 0.5,
+        },
+        timelinePoint: 3,
+      },
+
+      {
+        objectToAnimate: camera,
+        properties: {
+          fov: 30,
+          duration: 0.5,
+          onUpdate: () => camera.updateProjectionMatrix(),
+        },
+        timelinePoint: 3,
+      },
+    ];
+    AnimationsData = [...AnimationsData, ...aboutMeAnimations];
+
+    const contactMeAnimations = [
+      {
+        objectToAnimate: page_4_ref.current,
+        properties: {
+          opacity: 0,
+          display: 'none',
+          transform: 'translateY(-50%)',
+          duration: 0.5,
+        },
+        timelinePoint: 3.8,
+      },
+      {
+        objectToAnimate: camera.position,
+        properties: {
+          y: 0.2,
+          x: 0,
+          z: 1,
+          duration: 0.5,
+        },
+        timelinePoint: 3.8,
+      },
+      {
+        objectToAnimate: group.current.rotation,
+        properties: {
+          x: 0,
+          y: -1,
+          z: 0,
+          duration: 0.5,
+        },
+        timelinePoint: 3.8,
+      },
+      {
+        objectToAnimate: controls.current.target,
+        properties: {
+          x: -0.2,
+          z: 0,
+          y: 0.15,
+        },
+        timelinePoint: 3.8,
+      },
+
+      {
+        objectToAnimate: page_5_ref.current,
+        properties: {
+          opacity: 1,
+          display: 'flex',
+          transform: 'translateY(0)',
+
+          duration: 0.5,
+        },
+        timelinePoint: 4,
       },
 
       {
@@ -140,10 +374,10 @@ export function Model(props) {
           duration: 0.8,
           onUpdate: () => camera.updateProjectionMatrix(),
         },
-        timelinePoint: 1,
+        timelinePoint: 4,
       },
     ];
-    AnimationsData = [...AnimationsData, ...HeadbandAnimations];
+    AnimationsData = [...AnimationsData, ...contactMeAnimations];
 
     AnimationsData.map((animation) => {
       timeline.current.to(
@@ -159,10 +393,23 @@ export function Model(props) {
   useFrame(() => {
     const totalTimelineDuration = timeline.current.duration();
     const scrollOffset = scrollControl.offset;
+    const animate2 = scrollOffset - 0.3;
+    const animate3 = scrollOffset - 0.49;
+    const animate4 = scrollOffset - 0.74;
 
-    if (scrollOffset > 0.3 && scrollOffset < 1) {
-      actions.Animation.time = 4.5 + scrollOffset * 10;
-      console.log(scrollOffset < 1);
+    console.log(scrollOffset);
+
+    if (scrollOffset > 0.04 && scrollOffset < 0.26) {
+      actions.Animation.time = 4.5 + scrollOffset * 40;
+    }
+    if (scrollOffset > 0.3 && scrollOffset < 0.4) {
+      actions.Animation.time = animate2 * 15;
+    }
+    if (scrollOffset > 0.49 && scrollOffset < 0.74) {
+      actions.Animation.time = 11.5 + animate3 * 7;
+    }
+    if (scrollOffset > 0.74 && scrollOffset < 0.9) {
+      actions.Animation.time = animate4 * 25;
     }
     // Sincronizar la línea de tiempo con el valor del scroll
     timeline.current.seek(scrollOffset * totalTimelineDuration);

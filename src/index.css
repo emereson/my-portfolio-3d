@@ -11,7 +11,9 @@
   --text-color-white: #eae8db;
   --text-color-gray: rgba(96, 96, 96, 0.465);
   --text-color-grayLigth: rgb(234, 225, 209);
-  --text-color-gold: rgb(179, 154, 96);
+  --text-color-gold: #b9ad65;
+  --text-color-gold2: #eadb97;
+
   --text-color-blue: rgb(7, 255, 218);
 }
 

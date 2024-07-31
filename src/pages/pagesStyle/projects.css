@@ -1,0 +1,213 @@
+.projects_container {
+  display: none;
+  flex-direction: column;
+  align-items: end;
+  padding: 50px;
+  opacity: 0;
+  transform: translateY(30%);
+}
+.projects_maxWidth {
+  max-width: 1100px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.portfolio__section-one {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 3em;
+}
+
+.portfolio__section-one h2 {
+  position: relative;
+  font-size: 1.8em;
+  font-weight: 800;
+  color: var(--text-color-white);
+  text-shadow: 0 0 0.05em var(--body-purple);
+  font-family: 'Martian Mono', monospace;
+  animation: translate 1s forwards;
+}
+
+.portfolio__section-one h2::before {
+  content: '';
+  position: absolute;
+  bottom: -0.3em;
+  left: 0;
+  width: 40%;
+  height: 0.12em;
+  background-color: var(--text-color-gold);
+  transform: scaleX(1);
+}
+
+.portfolio__section-one h2::after {
+  content: '';
+  position: absolute;
+  bottom: -0.7em;
+  left: 0;
+  width: 20%;
+  height: 0.12em;
+  background-color: var(--text-color-gold);
+  transform: scaleX(1);
+}
+
+.portfolio__section-one p {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-color-white);
+  animation: translate 1s forwards;
+}
+
+/* .portfolio__section  */
+.portfolio__section-two {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  gap: 30px;
+  padding: 30px;
+  border: 2px solid rgba(247, 230, 135, 0.392);
+  border-radius: 10px;
+}
+
+.portfolio__project {
+  width: 320px;
+  height: 440px;
+  border-radius: 0.3em;
+  overflow: hidden;
+  background-color: var(--body-gray);
+  animation: translate 1s forwards;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -2px -2px 6px rgb(56, 54, 49), 0px 4px 6px rgb(56, 54, 49),
+    inset 0px 2px 6px rgb(56, 54, 49);
+}
+
+.portfotlioProjec__img {
+  position: relative;
+  width: 100%;
+  height: 45% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  padding: 8px;
+}
+
+.portfotlioProjec__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.portfolioProject__data {
+  width: 100%;
+  height: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  padding: 1em;
+  z-index: 2;
+  background-color: var(--body-gray);
+  transition: 0.5s ease;
+}
+.portfolioProject__data_text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.portfolioProject__data_text h3 {
+  color: var(--text-color-white);
+  font-size: 1em;
+}
+
+.portfolioProject__data_text p {
+  text-align: center;
+  font-size: 15px;
+  color: var(--text-color-white);
+}
+
+.portfolioProject__link {
+  position: relative;
+  width: 150px;
+  min-height: 40px;
+  color: var(--text-color-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 0.7em;
+  font-weight: 800;
+  font-family: 'Martian Mono', monospace;
+  padding: 0.8em;
+  background-color: transparent;
+  border: 0.1px solid var(--text-color-gold);
+  border-radius: 0.5em;
+  overflow: hidden;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.portfolioProject__link::before {
+  position: absolute;
+  content: '';
+  margin: auto;
+  width: 150%;
+  height: 200%;
+  border-radius: 50%;
+  z-index: -1;
+  background-color: var(--text-color-gold);
+  transition: 0.5s ease;
+  transform: translateY(-80%) translateX(80%);
+}
+
+.portfolioProject__link::after {
+  position: absolute;
+  content: '';
+  margin: auto;
+  width: 150%;
+  height: 200%;
+  border-radius: 50%;
+  z-index: -1;
+  background-color: var(--text-color-gold);
+  transition: 0.5s ease;
+  transform: translateY(80%) translateX(-80%);
+}
+
+.portfolioProject__link:hover::before {
+  transform: translateY(0) translateX(0);
+  transition: 0.5s ease;
+}
+
+.portfolioProject__link:hover::after {
+  transform: translateY(0) translateX(0);
+  transition: 0.5s ease;
+}
+
+@media (max-width: 900px) {
+  .portfolio__container {
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    padding: 1em;
+    padding-top: 6em;
+  }
+
+  .portfolio__project {
+    width: 100%;
+    max-width: 400px;
+  }
+}

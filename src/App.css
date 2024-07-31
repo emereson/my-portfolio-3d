@@ -28,6 +28,27 @@
   width: 100%;
 }
 
-.element {
-  animation: animate 2s ease-in-out;
+*::-webkit-scrollbar {
+  width: 8px;
+  background-color: var(--text-color-gray);
+  border-radius: 20px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--text-color-gold);
+  border-radius: 6px;
+}
+
+@keyframes animation {
+  0% {
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

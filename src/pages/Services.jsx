@@ -14,7 +14,7 @@ const Services = () => {
       <section className="services_section_one">
         <h2>Servicios</h2>
       </section>
-      <section className="services_section_two">
+      <section className="services_section_two" id="pointer-1">
         <article className="servicesSectionTwo_article">
           <i className="servicesSectionOne_icons">
             <SlScreenSmartphone />

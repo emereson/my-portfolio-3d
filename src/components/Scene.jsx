@@ -6,11 +6,17 @@ import { Environment, ScrollControls } from '@react-three/drei';
 const Scene = () => {
   return (
     <Canvas camera={{ fov: 30, position: [0, 0.5, 0.5] }}>
-      <ScrollControls pages={4} damping={0.25}>
+      <ScrollControls pages={4}>
         <Model />
       </ScrollControls>
-      <ambientLight intensity={6} />
-      <Environment files={'/models/12.hdr'} />
+      {/* Luz ambiental dorada */}
+      <ambientLight intensity={5} />
+      {/* Luz direccional dorada */}
+      <directionalLight intensity={15} color={'#eadb97'} position={[0, 0.1, 0]} />
+      <directionalLight intensity={10} color={'#eadb97'} position={[0, -0.1, -0.1]} />
+
+      {/* Descomenta esto si tienes un archivo HDR con tonos dorados */}
+      {/* <Environment files={'/models/12.hdr'} /> */}
     </Canvas>
   );
 };
