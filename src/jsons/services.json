@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "title": "Desarrollo de Aplicaciones Móviles",
+    "description": "¡Dale vida a tus ideas con aplicaciones móviles innovadoras! Desarrollo aplicaciones tanto para Android como para iOS, utilizando los lenguajes de programación más avanzados. Desde experiencias tipo Tinder hasta reproductores de música, reservas para restaurantes, e-commerce y mucho más. Transforma tus conceptos en realidades móviles que cautiven a tus usuarios.",
+
+    "projectGif": "/compuctactus.webm"
+  },
+  {
+    "id": 2,
+    "title": "Don Quezo",
+    "description": "Descubre nuestra plataforma de comercio electrónico diseñada especialmente para pizzerías. Haz tu pedido fácilmente, paga de manera segura en línea y recibe tus deliciosas pizzas directamente en tu puerta. ¡La forma más conveniente de disfrutar de tu pizza favorita!",
+    "linkPage": "https://shop.donquezo.com",
+    "projectImg": "/donquezo.png",
+    "projectGif": "/donquezo.webm"
+  },
+
+  {
+    "id": 3,
+    "title": "POLICLINICO",
+    "description": "Este proyecto fue desarrollado para un policlínico local. Permite al administrador ver la lista de pacientes por fecha, buscar pacientes por número de identificación y visualizar informes médicos y ecografías",
+    "linkPage": null,
+    "projectImg": "https://firebasestorage.googleapis.com/v0/b/blog-app-974e2.appspot.com/o/projectImg%2F1703854782508-polyclinic.png?alt=media&token=2e59e2bb-0a38-4b3e-bb04-c2dc51baa95a"
+  },
+  {
+    "id": 4,
+    "title": "Aquí Estoy",
+    "description": "Esta plataforma para clínicas veterinarias simplifica el acceso a la información de mascotas mediante escaneo de QR en los collares. Ofrece detalles y ubicación actual a través de la geolocalización de Google Maps, con la opción de compartir la ubicación.",
+    "linkPage": null,
+    "projectImg": "https://firebasestorage.googleapis.com/v0/b/blog-app-974e2.appspot.com/o/projectImg%2F1703853775955-qrPet.png?alt=media&token=10a27762-2521-4006-b745-162c23991ca2"
+  },
+  {
+    "id": 5,
+    "title": "MB HARMONY PLANNER",
+    "description": "Plataforma de comercio electrónico diseñada para productos individuales, donde la descarga del producto se realiza automáticamente tras completar la compra.",
+    "linkPage": "https://mbharmonyplanner.com/",
+    "projectImg": "/mb.png",
+    "projectGif": "/bm.webm"
+  },
+  {
+    "id": 6,
+    "title": "HENRY GIL WEDDINGS",
+    "description": "Página web exclusiva y cautivadora diseñada para destacar el excepcional trabajo de un talentoso fotógrafo. Explora un portafolio lleno de videos e imágenes únicas y encantadoras que capturan momentos inolvidables.",
+    "linkPage": "https://henrygilweddings.com/#/",
+    "projectImg": "/henrygil.png",
+    "projectGif": "/henry.webm"
+  },
+  {
+    "id": 7,
+    "title": "ALIPIO PONCE",
+    "description": " El Sistema de Control de Alumnos ofrece una plataforma integral para gestionar pagos, asistencia, exámenes y observaciones de los alumnos, brindando un control completo sobre su rendimiento y participación en la institución educativa.",
+    "linkPage": null,
+    "projectImg": "/ap.png",
+    "projectGif": "/ap.png"
+  },
+  {
+    "id": 8,
+    "title": "CREATIVE ART VIDEO",
+    "description": "¡CREATIVE ART VIDEO! Un espacio digital diseñado para el talentoso camarógrafo y maestro de eventos. Aquí, tu cliente podrá dar vida a su arte, compartiendo sus videos e imágenes más cautivadores y sorprendentes. ¡Es el escaparate perfecto para mostrar su trabajo al mundo!",
+    "linkPage": "https://creativeartvideo.com/",
+    "projectImg": "/cav.png",
+    "projectGif": "/creative.webm"
+  },
+  {
+    "id": 9,
+    "title": "Netflyx",
+    "description": "Este es un proyecto personal, es una página donde podrás ver todos los tráilers o adelantos de la película o serie que te interese, cuenta con la opción de buscar y filtrar la serie que desees por su nombre o género.",
+    "linkPage": "https://dulcet-cucurucho-90d923.netlify.app",
+    "projectImg": "/netflyx.jpg",
+    "projectGif": "/netflyx.jpg"
+  }
+]
