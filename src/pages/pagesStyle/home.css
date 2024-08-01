@@ -4,8 +4,6 @@
   justify-content: center;
   align-items: end;
   padding: 20px;
-  opacity: 0;
-  transform: translateY(30%);
 }
 
 .home_intro {
@@ -18,21 +16,41 @@
 }
 
 .home_intro h1 {
-  font-size: 40px;
+  font-size: 50px;
   font-weight: 600;
   color: var(--text-color-white);
 }
 
 .home_intro h2 {
-  font-size: 25px;
+  font-size: 35px;
   font-weight: 500;
   color: var(--text-color-gold);
 }
 
 .home_intro p {
-  font-size: 18px;
+  font-size: 23px;
   font-weight: 400;
   color: var(--text-color-grayLigth);
+}
+
+.home_container button {
+  position: relative;
+  color: var(--text-color-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 0.7em;
+  font-weight: 600;
+  font-family: 'Martian Mono', monospace;
+  padding: 0.8em;
+  background-color: transparent;
+  border: 0.15em solid var(--text-color-gold);
+  border-radius: 0.5em;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.5s;
+  pointer-events: visible;
 }
 
 @media (max-width: 600px) {

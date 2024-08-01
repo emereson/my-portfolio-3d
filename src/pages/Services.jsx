@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './pagesStyle/service.css';
 import { SlScreenSmartphone } from 'react-icons/sl';
 import { FaLaptopCode } from 'react-icons/fa6';
@@ -7,8 +7,11 @@ import { MdWeb } from 'react-icons/md';
 import { CgIfDesign } from 'react-icons/cg';
 import { FaShopify } from 'react-icons/fa';
 import { GrConfigure } from 'react-icons/gr';
+import useIntersectionObserverOnResize from '../hook/useIntersectionObserverOnResize';
 
 const Services = () => {
+  useIntersectionObserverOnResize('page-2');
+
   return (
     <div className=" page services_container" id="page-2">
       <section className="services_section_one">

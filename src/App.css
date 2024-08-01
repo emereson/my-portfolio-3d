@@ -1,31 +1,40 @@
 #root {
+  width: 100%;
   position: relative;
-  display: flex;
-  justify-content: center;
+  height: 100%;
+  overflow: hidden;
 }
 
 .scene_container {
-  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100vh;
+  pointer-events: none;
+
+  z-index: 1;
 }
 
 .pages_container {
   position: absolute;
-  top: 0;
-  pointer-events: none;
-  width: 100vw;
-  min-height: 100vh;
+  width: 100%;
+  height: 100vh;
   max-width: 1800px;
   z-index: 3;
+  pointer-events: none;
   display: flex;
   justify-content: center;
-  overflow: hidden;
+  align-items: center;
 }
 
 .page {
   position: absolute;
-  height: 100%;
+  height: 100vh;
   width: 100%;
+  display: none;
+  opacity: 0;
+  transform: translateY(30%);
 }
 
 *::-webkit-scrollbar {
@@ -39,22 +48,63 @@
   border-radius: 6px;
 }
 
-@keyframes animation {
-  0% {
+/* Definir la animación */
+@keyframes fadeInUp {
+  from {
     opacity: 0;
+    transform: translateY(20px);
   }
-
-  70% {
-    opacity: 0;
-  }
-
-  100% {
+  to {
     opacity: 1;
+    transform: translateY(0);
   }
 }
+
+/* Clase para controlar la animación */
 
 @media (max-width: 600px) {
   *::-webkit-scrollbar {
     width: 6px;
+  }
+  #root {
+    width: 100%;
+    position: relative;
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  .scene_container {
+    pointer-events: none;
+  }
+
+  .pages_container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-width: 1800px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    pointer-events: auto;
+    gap: 50px;
+    padding-bottom: 50px;
+  }
+
+  .page {
+    position: relative;
+    top: 50px;
+    min-height: 100vh;
+    height: auto;
+    width: 100%;
+    display: flex;
+    opacity: 0;
+    transform: translateY(0);
+    transition: transform 0.3s ease-out;
+  }
+
+  .page.visible {
+    animation: fadeInUp 1.5s forwards;
   }
 }

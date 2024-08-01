@@ -1,11 +1,8 @@
 .contact__container {
-  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: start;
   padding: 50px;
-  opacity: 0;
-  transform: translateY(30%);
 }
 
 .contact_intro {
@@ -58,7 +55,7 @@
 
 .contact__section-one p {
   color: var(--text-color-grayLigth);
-  font-size: 16px;
+  font-size: 20px;
 }
 
 /* contact__section-two */
@@ -79,7 +76,7 @@
 
 .contact__section-two a {
   color: var(--text-color-gold);
-  font-size: 2em;
+  font-size: 45px;
   border-radius: 50%;
   padding: 0.15em;
   display: flex;
@@ -139,7 +136,7 @@
   background-color: var(--body-gray);
   border: none;
   border-radius: 5px;
-  padding: 10px 15px;
+  padding: 15px 15px;
   pointer-events: visible;
 }
 
@@ -157,7 +154,6 @@
 
 .contactSectionThree__button {
   width: 120px;
-  height: 45px;
   margin: auto;
   position: relative;
   color: var(--text-color-white);
@@ -165,12 +161,12 @@
   justify-content: center;
   align-items: center;
   gap: 0.5em;
-  font-size: 0.7em;
+  font-size: 14px;
   font-weight: 800;
   font-family: 'Martian Mono', monospace;
-  padding: 0.8em;
+  padding: 15px;
   background-color: transparent;
-  border: 0.15em solid var(--text-color-gold);
+  border: 1.5px solid var(--text-color-gold);
   border-radius: 0.5em;
   overflow: hidden;
   cursor: pointer;
@@ -216,10 +212,34 @@
 
 @media (max-width: 900px) {
   .contact__container {
+    padding: 20px;
+    align-items: start;
+    justify-content: start;
+  }
+  .contact__section-one {
+    gap: 30px;
+  }
+
+  .contact__section-one h2 {
+    font-size: 20px;
+  }
+
+  .contact__section-one p {
+    font-size: 15px;
+  }
+
+  .contact__section-two a {
+    font-size: 35px;
+  }
+
+  .contact__section-three h3 {
+    font-size: 18px;
+  }
+
+  .contact__section-three div {
     width: 100%;
-    min-height: 100vh;
-    height: 100%;
-    padding: 1em;
-    padding-top: 6em;
+  }
+  .contact__section-three label {
+    font-size: 17px;
   }
 }

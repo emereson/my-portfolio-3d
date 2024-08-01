@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './pagesStyle/aboutme.css';
+import useIntersectionObserverOnResize from '../hook/useIntersectionObserverOnResize';
 
 const AboutMe = () => {
   const descargarCV = () => {
@@ -8,6 +9,9 @@ const AboutMe = () => {
     enlaceTemporal.download = 'Emerson_Wilson_CV.pdf';
     enlaceTemporal.click();
   };
+
+  useIntersectionObserverOnResize('page-4');
+
   return (
     <div className=" page aboutMe_container" id="page-4">
       <section className="aboutMe__section-one">

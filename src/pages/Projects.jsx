@@ -1,13 +1,10 @@
 import React, { useEffect } from 'react';
 import './pagesStyle/projects.css';
-import { useState } from 'react';
 import projects from '../jsons/projects.json';
+import useIntersectionObserverOnResize from '../hook/useIntersectionObserverOnResize';
 
 const Projects = () => {
-  const [viewGif, setviewGif] = useState(false);
-  setTimeout(() => {
-    setviewGif(true);
-  }, 2000);
+  useIntersectionObserverOnResize('page-3');
 
   return (
     <div className=" page projects_container" id="page-3">

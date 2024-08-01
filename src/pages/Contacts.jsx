@@ -1,8 +1,9 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import './pagesStyle/contacts.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useIntersectionObserverOnResize from '../hook/useIntersectionObserverOnResize';
 
 const Contacts = () => {
   const formRef = useRef();
@@ -31,6 +32,9 @@ const Contacts = () => {
         console.log(error.text);
       });
   };
+
+  useIntersectionObserverOnResize('page-5');
+
   return (
     <div className=" page contact__container" id="page-5">
       <ToastContainer />

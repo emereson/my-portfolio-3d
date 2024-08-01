@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Model } from './Model';
-import { Environment, ScrollControls } from '@react-three/drei';
+import { ScrollControls } from '@react-three/drei';
+import { Model2 } from './Model2';
 
 const Scene = () => {
-  const screenWidth = window.innerWidth;
-  console.log(screenWidth);
+  // Usa `key` como una clave para reiniciar el componente Canvas
   return (
-    <Canvas camera={{ fov: screenWidth < 600 ? 50 : 30, position: [0, 0.5, 0.5] }}>
-      <ScrollControls pages={4}>
-        <Model />
-      </ScrollControls>
+    <Canvas camera={{ fov: window.innerWidth < 600 ? 50 : 30, position: [0, 0.5, 0.5] }}>
+      {window.innerWidth > 600 ? (
+        <ScrollControls pages={4}>
+          <Model />
+        </ScrollControls>
+      ) : (
+        <Model2 />
+      )}
       {/* Luz ambiental dorada */}
       <ambientLight intensity={5} />
       {/* Luz direccional dorada */}

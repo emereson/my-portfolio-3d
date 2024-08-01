@@ -1,10 +1,7 @@
 .projects_container {
-  display: none;
   flex-direction: column;
   align-items: end;
   padding: 50px;
-  opacity: 0;
-  transform: translateY(30%);
 }
 .projects_maxWidth {
   max-width: 1100px;
@@ -58,7 +55,7 @@
 }
 
 .portfolio__section-one p {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 400;
   color: var(--text-color-white);
   animation: translate 1s forwards;
@@ -81,21 +78,20 @@
 
 .portfolio__project {
   width: 320px;
-  min-height: 440px;
+  height: 500px;
   border-radius: 0.3em;
   overflow: hidden;
   background-color: var(--body-gray);
   animation: translate 1s forwards;
   display: flex;
   flex-direction: column;
-  box-shadow: -2px -2px 6px rgb(56, 54, 49), 0px 4px 6px rgb(56, 54, 49),
-    inset 0px 2px 6px rgb(56, 54, 49);
+  box-shadow: 0px 2px 4px rgb(56, 54, 49), inset 0px 2px 4px rgb(56, 54, 49);
 }
 
 .portfotlioProjec__img {
   position: relative;
   width: 100%;
-  height: 200px;
+  min-height: 200px;
 
   display: flex;
   justify-content: center;
@@ -112,7 +108,7 @@
 
 .portfolioProject__data {
   width: 100%;
-  height: 55%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -132,31 +128,30 @@
 
 .portfolioProject__data_text h3 {
   color: var(--text-color-gold);
-  font-size: 1em;
+  font-size: 20px;
   font-weight: 500;
 }
 
 .portfolioProject__data_text p {
   text-align: center;
-  font-size: 15px;
+  font-size: 17px;
   color: var(--text-color-white);
 }
 
 .portfolioProject__link {
   position: relative;
   width: 150px;
-  min-height: 40px;
   color: var(--text-color-white);
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.5em;
-  font-size: 0.7em;
+  font-size: 13px;
   font-weight: 800;
   font-family: 'Martian Mono', monospace;
-  padding: 0.8em;
+  padding: 15px 0;
   background-color: transparent;
-  border: 0.1px solid var(--text-color-gold);
+  border: 1.5px solid var(--text-color-gold);
   border-radius: 0.5em;
   overflow: hidden;
   transition: 0.5s;
@@ -206,6 +201,10 @@
     justify-content: start;
   }
 
+  .projects_maxWidth {
+    gap: 30px;
+  }
+
   .portfolio__section-one {
     width: 100%;
     gap: 25px;
@@ -215,29 +214,30 @@
     font-size: 18px;
   }
 
-  .services_section_two {
-    padding: 15px;
-    height: 60%;
-    border: 1px solid rgba(247, 231, 135, 0.431);
-  }
-
   .portfolio__section-one p {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .portfolio__section-two {
-    padding: 15px;
-  }
-  .portfolio__project {
-    width: 100%;
+    padding: 0px;
+    border: none;
   }
 
+  .portfolio__project {
+    width: 100%;
+    height: auto;
+    padding-bottom: 10px;
+  }
+
+  .portfotlioProjec__img {
+    height: 200px;
+  }
   .portfolioProject__data {
     padding: 10px;
   }
   .portfolioProject__data_text p {
     text-align: center;
-    font-size: 14px;
+    font-size: 15px;
     color: var(--text-color-white);
   }
 }
