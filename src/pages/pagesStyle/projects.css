@@ -55,7 +55,7 @@
 }
 
 .portfolio__section-one p {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
   color: var(--text-color-white);
   animation: translate 1s forwards;
@@ -72,7 +72,6 @@
   overflow: auto;
   gap: 30px;
   padding: 30px;
-  border: 2px solid rgba(247, 230, 135, 0.392);
   border-radius: 10px;
 }
 
@@ -134,7 +133,7 @@
 
 .portfolioProject__data_text p {
   text-align: center;
-  font-size: 17px;
+  font-size: 16px;
   color: var(--text-color-white);
 }
 

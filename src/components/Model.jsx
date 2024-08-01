@@ -381,7 +381,7 @@ export function Model(props) {
       actions.Animation.time = 4.5 + scrollOffset * 40;
     }
     if (scrollOffset > 0.3 && scrollOffset < 0.4) {
-      actions.Animation.time = animate2 * 15;
+      actions.Animation.time = animate2 * 20;
     }
     if (scrollOffset > 0.49 && scrollOffset < 0.73) {
       actions.Animation.time = 11.5 + animate3 * 7;
