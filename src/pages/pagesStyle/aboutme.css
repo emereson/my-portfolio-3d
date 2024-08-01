@@ -1,6 +1,6 @@
 .aboutMe_container {
   max-width: 1200px;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -124,7 +124,7 @@
   align-items: center;
   gap: 0.5em;
   font-size: 0.7em;
-  font-weight: 800;
+  font-weight: 600;
   font-family: 'Martian Mono', monospace;
   padding: 0.8em;
   background-color: transparent;
@@ -212,7 +212,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   gap: 30px;
   row-gap: 15px;
 }
@@ -373,62 +373,60 @@
   color: var(--text-color-p);
 }
 
-@media (max-width: 900px) {
-  .aboutMe__container {
-    width: 100%;
-    min-height: 100vh;
-    height: 100%;
-    padding: 1em;
-    padding-top: 6em;
+@media (max-width: 600px) {
+  .aboutMe_container {
+    padding: 20px;
+    align-items: start;
+    justify-content: start;
+    height: auto;
   }
 
-  .aboutMe__section-two {
-    justify-content: center;
-    align-items: center;
+  .aboutMe__articleOne {
+    width: 100%;
+    gap: 25px;
+  }
+  .aboutMe__articleOne h2 {
+    font-size: 18px;
+    font-weight: 800;
+  }
+
+  .aboutMe__articleOne p {
+    font-size: 14px;
+    font-weight: 400;
   }
 
   .aboutMe__section_two {
-    width: 100%;
-  }
-
-  .aboutMe__section_two ul {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .aboutMe__section_two li {
-    width: 45%;
-    min-width: 200px;
-  }
-
-  .aboutMeSectionTwo__buttons {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .aboutMe__educationContainer {
-    margin-top: 3em;
-    justify-content: center;
-  }
-
-  .skills {
     margin: 0;
-    padding-top: 2em;
+    gap: 15px;
+  }
+  .aboutMe__section_two li {
+    width: 43%;
+    font-size: 13px;
+    margin-left: 10px;
   }
 
-  .aboutMe__date h2 {
-    font-size: 1.5em;
+  .aboutMeSectionTwo__buttons button {
+    font-size: 10px;
   }
 
   .skills h2 {
-    font-size: 1.5em;
+    font-size: 14px;
   }
 
-  .aboutMe__date p {
-    font-size: 1em;
+  .skills__ul {
+    gap: 20px;
+    row-gap: 10px;
+  }
+
+  .skills__li {
+    width: 40px;
+  }
+
+  .skills__li i {
+    font-size: 40px;
   }
 
   .skills__li span {
-    font-size: 1em;
+    font-size: 11px;
   }
 }

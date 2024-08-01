@@ -1,5 +1,5 @@
 .contact__container {
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: start;

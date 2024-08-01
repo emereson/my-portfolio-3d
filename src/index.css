@@ -52,6 +52,7 @@ body {
   min-width: 300px;
   overflow: hidden;
   background: var(--body-background);
+  letter-spacing: 0.1px;
 }
 
 h1,

@@ -23,6 +23,8 @@ export function Model(props) {
   const pointer_1_ref = useRef();
   const pointer_2_ref = useRef();
 
+  const screenWidth = window.innerWidth;
+
   useLayoutEffect(() => {
     page_1_ref.current = document.getElementById('page-1');
     page_2_ref.current = document.getElementById('page-2');
@@ -61,7 +63,7 @@ export function Model(props) {
       },
       onComplete: () => {
         gsap.to(camera, {
-          fov: 23,
+          fov: screenWidth < 600 ? 48 : 23,
           duration: 0.5,
           onUpdate: () => camera.updateProjectionMatrix(),
         });
@@ -70,6 +72,7 @@ export function Model(props) {
           x: -0.5,
           duration: 0.5,
         });
+
         gsap.to(page_1_ref.current, {
           opacity: 1,
           transform: 'translateY(0)',
@@ -78,11 +81,16 @@ export function Model(props) {
       },
     });
     timeline.to(controls.current.target, {
-      x: 0.2,
+      x: screenWidth < 600 ? 0 : 0.13,
+      y: screenWidth < 600 ? 0.23 : 0.1,
       duration: 0.5,
     });
 
-    // Reproduce la animación automáticamente al cargar la página
+    gsap.to(group.current.rotation, {
+      y: screenWidth < 600 ? 0 : 0.6,
+      duration: 0.5,
+    });
+
     timeline.play();
   }, [actions, camera, texture]);
 
@@ -113,9 +121,9 @@ export function Model(props) {
       {
         objectToAnimate: controls.current.target,
         properties: {
-          x: -0.25,
+          x: screenWidth < 600 ? 0 : -0.25,
           z: 0,
-          y: 0,
+          y: screenWidth < 600 ? 0.3 : 0,
         },
         timelinePoint: 0.2,
       },
@@ -151,7 +159,7 @@ export function Model(props) {
       {
         objectToAnimate: camera,
         properties: {
-          fov: 30,
+          fov: screenWidth < 600 ? 70 : 30,
           duration: 0.5,
           onUpdate: () => camera.updateProjectionMatrix(),
         },
@@ -176,7 +184,7 @@ export function Model(props) {
         properties: {
           pointerEvents: 'none',
         },
-        timelinePoint: 1.7,
+        timelinePoint: 1.8,
       },
       {
         objectToAnimate: group.current.rotation,
@@ -186,7 +194,7 @@ export function Model(props) {
           z: -1.8,
           duration: 0.5,
         },
-        timelinePoint: 1.6,
+        timelinePoint: 1.8,
       },
       {
         objectToAnimate: controls.current.target,
@@ -196,7 +204,7 @@ export function Model(props) {
           y: 0,
           duration: 0.5,
         },
-        timelinePoint: 1.6,
+        timelinePoint: 1.8,
       },
       {
         objectToAnimate: camera.position,
@@ -206,7 +214,7 @@ export function Model(props) {
           z: 0.8,
           duration: 0.5,
         },
-        timelinePoint: 1.6,
+        timelinePoint: 1.8,
       },
 
       {
@@ -226,16 +234,6 @@ export function Model(props) {
           pointerEvents: 'visible',
         },
         timelinePoint: 2.2,
-      },
-
-      {
-        objectToAnimate: camera,
-        properties: {
-          fov: 30,
-          duration: 0.5,
-          onUpdate: () => camera.updateProjectionMatrix(),
-        },
-        timelinePoint: 2,
       },
     ];
     AnimationsData = [...AnimationsData, ...projectsAnimations];
@@ -267,7 +265,7 @@ export function Model(props) {
           z: 0,
           duration: 0.5,
         },
-        timelinePoint: 2.5,
+        timelinePoint: 2.8,
       },
       {
         objectToAnimate: controls.current.target,
@@ -277,7 +275,7 @@ export function Model(props) {
           z: 0,
           duration: 0.5,
         },
-        timelinePoint: 2.7,
+        timelinePoint: 2.8,
       },
       {
         objectToAnimate: camera.position,
@@ -287,7 +285,7 @@ export function Model(props) {
           z: 0.7,
           duration: 0.5,
         },
-        timelinePoint: 2.7,
+        timelinePoint: 2.8,
       },
 
       {
@@ -298,16 +296,6 @@ export function Model(props) {
           transform: 'translateY(0)',
 
           duration: 0.5,
-        },
-        timelinePoint: 3,
-      },
-
-      {
-        objectToAnimate: camera,
-        properties: {
-          fov: 30,
-          duration: 0.5,
-          onUpdate: () => camera.updateProjectionMatrix(),
         },
         timelinePoint: 3,
       },
@@ -366,16 +354,6 @@ export function Model(props) {
         },
         timelinePoint: 4,
       },
-
-      {
-        objectToAnimate: camera,
-        properties: {
-          fov: 30,
-          duration: 0.8,
-          onUpdate: () => camera.updateProjectionMatrix(),
-        },
-        timelinePoint: 4,
-      },
     ];
     AnimationsData = [...AnimationsData, ...contactMeAnimations];
 
@@ -395,9 +373,7 @@ export function Model(props) {
     const scrollOffset = scrollControl.offset;
     const animate2 = scrollOffset - 0.3;
     const animate3 = scrollOffset - 0.49;
-    const animate4 = scrollOffset - 0.74;
-
-    console.log(scrollOffset);
+    const animate4 = scrollOffset - 0.8;
 
     if (scrollOffset > 0.04 && scrollOffset < 0.26) {
       actions.Animation.time = 4.5 + scrollOffset * 40;
@@ -405,10 +381,10 @@ export function Model(props) {
     if (scrollOffset > 0.3 && scrollOffset < 0.4) {
       actions.Animation.time = animate2 * 15;
     }
-    if (scrollOffset > 0.49 && scrollOffset < 0.74) {
+    if (scrollOffset > 0.49 && scrollOffset < 0.73) {
       actions.Animation.time = 11.5 + animate3 * 7;
     }
-    if (scrollOffset > 0.74 && scrollOffset < 0.9) {
+    if (scrollOffset > 0.8 && scrollOffset < 1) {
       actions.Animation.time = animate4 * 25;
     }
     // Sincronizar la línea de tiempo con el valor del scroll

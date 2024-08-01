@@ -34,3 +34,29 @@
   font-weight: 400;
   color: var(--text-color-grayLigth);
 }
+
+@media (max-width: 600px) {
+  .home_container {
+    padding-top: 20vh;
+    align-items: start;
+    justify-content: start;
+  }
+
+  .home_intro h1 {
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--text-color-white);
+  }
+
+  .home_intro h2 {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-color-gold);
+  }
+
+  .home_intro p {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-color-grayLigth);
+  }
+}

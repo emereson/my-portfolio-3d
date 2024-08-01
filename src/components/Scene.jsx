@@ -4,8 +4,10 @@ import { Model } from './Model';
 import { Environment, ScrollControls } from '@react-three/drei';
 
 const Scene = () => {
+  const screenWidth = window.innerWidth;
+  console.log(screenWidth);
   return (
-    <Canvas camera={{ fov: 30, position: [0, 0.5, 0.5] }}>
+    <Canvas camera={{ fov: screenWidth < 600 ? 50 : 30, position: [0, 0.5, 0.5] }}>
       <ScrollControls pages={4}>
         <Model />
       </ScrollControls>

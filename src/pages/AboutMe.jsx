@@ -15,11 +15,8 @@ const AboutMe = () => {
           <h2>Sobre Mí</h2>
           <p>
             ¡Saludos! Soy <span>Emerson</span>, un apasionado desarrollador con destacadas
-            habilidades de comunicación y colaboración. Estoy en búsqueda de una posición a tiempo
-            completo como front-end developer, back-end developer o full-stack developer, donde
-            pueda aplicar mi experiencia para contribuir al éxito del equipo. Mi objetivo es
-            continuar creciendo profesionalmente mientras aporto al desarrollo de soluciones
-            innovadoras.
+            habilidades de comunicación y colaboración. Mi objetivo es continuar creciendo
+            profesionalmente mientras aporto al desarrollo de soluciones innovadoras.
           </p>
         </article>
       </section>

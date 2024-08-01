@@ -15,10 +15,9 @@ const Projects = () => {
         <section className="portfolio__section-one">
           <h2>Mis Proyectos</h2>
           <p>
-            Sumérgete en un mundo donde la innovación se entrelaza con la creatividad. Aquí, cada
-            proyecto es más que código y diseño, es una expresión de dedicación, compromiso y
-            pasión. Te invito a descubrir ejemplos que no solo destacan mis habilidades técnicas,
-            sino también el impacto transformador que aporto a cada cliente.
+            Aquí encontrarás una selección de proyectos que he desarrollado, tanto personales como
+            para clientes. Cada uno refleja mi habilidad para abordar diversos desafíos y crear
+            soluciones efectivas.
           </p>
         </section>
 
