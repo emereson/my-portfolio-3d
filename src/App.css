@@ -60,7 +60,123 @@
   }
 }
 
-/* Clase para controlar la animación */
+.app__modeColor {
+  width: 50px;
+  overflow: hidden;
+  height: auto;
+  position: fixed;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1em;
+  z-index: 5;
+  right: 1%;
+  top: 10%;
+  color: var(--text-color-white);
+  transform: translateX(0);
+  transition: 0.7s ease;
+}
+
+.activeThemeColor {
+  width: 12em;
+  transition: 0.7s ease;
+}
+
+.appModeColor__iconsContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 0.8em;
+}
+
+.appModeColor__themeColors {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 0.8em;
+  align-items: start;
+  font-size: 1.1em;
+  font-weight: 600;
+  background-color: var(--body-gray);
+  padding: 0.5em;
+  border-radius: 0.3em;
+}
+
+.appModeColor__themeColors ul {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3em;
+}
+
+.appModeColor__themeColors li {
+  width: 1.1em;
+  height: 1.1em;
+  border-radius: 50%;
+  background-color: aliceblue;
+  cursor: pointer;
+}
+
+.color_spin {
+  width: 35px; /* Ajusta el tamaño del contenedor según tus necesidades */
+  height: 35px;
+  position: relative;
+  border-radius: 50%; /* Hace que el contenedor sea circular */
+  overflow: hidden; /* Oculta los `span` que se salen del contenedor */
+  cursor: pointer;
+  animation: spin 2s linear infinite; /* Animación de giro */
+}
+
+/* Estilo de los segmentos */
+.segment {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background: transparent;
+  border-radius: 100% 0 0 0;
+  clip-path: polygon(0 0, 1000% 0, 0 1000%); /* Forma triangular */
+}
+
+/* Colores para cada segmento */
+.segment1 {
+  background: #b9ad65; /* Rojo */
+  transform: rotate(0deg);
+  transform-origin: 100% 100%;
+}
+.segment2 {
+  background: #9399a1; /* Naranja */
+  transform: rotate(72deg);
+  transform-origin: 100% 100%;
+}
+.segment3 {
+  background: #ffff00; /* Amarillo */
+  transform: rotate(144deg);
+  transform-origin: 100% 100%;
+}
+.segment4 {
+  background: #00ff00; /* Verde */
+  transform: rotate(216deg);
+  transform-origin: 100% 100%;
+}
+.segment5 {
+  background: #0000ff; /* Azul */
+  transform: rotate(288deg);
+  transform-origin: 100% 100%;
+}
+
+/* Animación de giro */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 @media (max-width: 600px) {
   *::-webkit-scrollbar {

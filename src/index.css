@@ -5,43 +5,39 @@
 }
 
 :root {
-  --body-background: rgb(12, 13, 14);
+  --body-background: rgb(12, 12, 16);
   --body-white: #eeeeee;
-  --body-gray: rgb(29, 28, 27);
+  --body-gray: rgb(27, 27, 29);
   --text-color-white: #eae8db;
-  --text-color-gray: rgba(96, 96, 96, 0.465);
+  --text-color-gray: #60606077;
   --text-color-grayLigth: rgb(234, 225, 209);
   --text-color-gold: #b9ad65;
-  --text-color-gold2: #eadb97;
+  --text-color-gold2: #1f1f1f;
 
   --text-color-blue: rgb(7, 255, 218);
 }
 
-.light-mode {
-  --body-background: rgb(236, 236, 236);
-  --body-gray: rgb(255, 255, 255);
-  --text-color-white: #0a0a0c;
-  --text-color-grayLigth: rgb(255, 217, 217);
-}
-
 .theme__red {
-  --text-color-red: #dc3128;
+  --text-color-gold: #ff4242;
+  --text-color-gold2: #b13e3e;
 }
 
 .theme__orange {
-  --text-color-red: #f26d00;
+  --text-color-gold: #f26d00;
+  --text-color-gold2: #f26d00;
 }
 
-.theme__green {
-  --text-color-red: #16af6d;
+.theme__plate {
+  --text-color-gold: #9399a1;
+  --text-color-gold2: ;
 }
 
 .theme__blue {
-  --text-color-red: #0022aa;
+  --text-color-gold: #00009c;
 }
 
-.theme__pink {
-  --text-color-red: #b20e8c;
+.theme__gold {
+  --text-color-gold: #b9ad65;
 }
 
 body {

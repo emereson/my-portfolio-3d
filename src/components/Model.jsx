@@ -4,7 +4,7 @@ import { useFrame, useThree } from '@react-three/fiber';
 import gsap from 'gsap';
 import * as THREE from 'three';
 
-export function Model(props) {
+export function Model({ fontColor }) {
   const group = useRef();
   const texture = useTexture('./1.jpeg');
   const { nodes, materials, animations } = useGLTF('/models/macbook.glb');
@@ -25,6 +25,21 @@ export function Model(props) {
   const next_1_ref = useRef();
 
   const screenWidth = window.innerWidth;
+
+  useEffect(() => {
+    if (fontColor === 'gold') {
+      materials.Space_Grey.color.set('#2c2c27');
+    }
+    if (fontColor === 'plate') {
+      materials.Space_Grey.color.set('#1f1f1f');
+    }
+    if (fontColor === 'blue') {
+      materials.Space_Grey.color.set('#060616');
+    }
+    if (fontColor === 'red') {
+      materials.Space_Grey.color.set('#250004');
+    }
+  }, [fontColor]);
 
   useLayoutEffect(() => {
     page_1_ref.current = document.getElementById('page-1');
@@ -395,7 +410,7 @@ export function Model(props) {
 
   return (
     <>
-      <group ref={group} {...props} dispose={null}>
+      <group ref={group} dispose={null}>
         <group name="Sketchfab_Scene">
           <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 0]}>
             <group name="root">
@@ -413,7 +428,7 @@ export function Model(props) {
                     castShadow
                     receiveShadow
                     geometry={nodes.Object_5.geometry}
-                    material={materials.Black_Plastic}
+                    material={materials.Black_Glass}
                   />
                   <mesh
                     name="Object_6"
@@ -427,7 +442,7 @@ export function Model(props) {
                     castShadow
                     receiveShadow
                     geometry={nodes.Object_7.geometry}
-                    material={null}
+                    material={materials.Glass}
                   />
                   <mesh
                     name="Object_8"
@@ -556,7 +571,7 @@ export function Model(props) {
                     castShadow
                     receiveShadow
                     geometry={nodes.Object_29.geometry}
-                    material={materials.Black_Plastic}
+                    material={materials.Black_Glass}
                   />
                   <mesh
                     name="Object_30"
