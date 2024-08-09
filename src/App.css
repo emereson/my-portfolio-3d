@@ -128,7 +128,7 @@
   border-radius: 50%; /* Hace que el contenedor sea circular */
   overflow: hidden; /* Oculta los `span` que se salen del contenedor */
   cursor: pointer;
-  animation: spin 2s linear infinite; /* Animación de giro */
+  animation: spin 4s linear infinite; /* Animación de giro */
 }
 
 /* Estilo de los segmentos */
@@ -158,7 +158,7 @@
   transform-origin: 100% 100%;
 }
 .segment4 {
-  background: #00ff00; /* Verde */
+  background: #ff0000; /* Verde */
   transform: rotate(216deg);
   transform-origin: 100% 100%;
 }

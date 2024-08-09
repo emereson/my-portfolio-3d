@@ -8,7 +8,7 @@ import AboutMe from './pages/AboutMe';
 import Contacts from './pages/Contacts';
 
 function App() {
-  const [fontColor, setfontColor] = useState('gold');
+  const [fontColor, setfontColor] = useState('blue');
   const [activeThemeColor, setactiveThemeColor] = useState(false);
 
   const toggleActiveThemeMode = () => {
